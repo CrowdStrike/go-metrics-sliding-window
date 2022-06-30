@@ -23,7 +23,7 @@ import (
 	"time"
 	
 	"github.com/crowdstrike/go-metrics-sliding-window"
-    "github.com/rcrowley/go-metrics"
+	"github.com/rcrowley/go-metrics"
 )
 
 func main() {

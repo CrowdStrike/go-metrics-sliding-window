@@ -34,7 +34,7 @@ func (realClock) Now() time.Time {
 // NewSample constructs a new sliding-window sample over the given time window. At the end of each window
 // the metrics outside the window are removed. This is an ideal sampling method for low-volume metrics where sample
 // values would stick around indefinitely because there was not a steady stream of new metrics. Please note that the
-// reservoir size is the size of two in-memory slices of int64s and time.Times used to hold the sample values and times.
+// reservoir size is the size of two in-memory slices of int64s and time. Times used to hold the sample values and times.
 // Therefore, if a large reservoir size is used it can be an extremely inefficient use of memory.
 func NewSample(reservoirSize int, window time.Duration) metrics.Sample {
 	return &Sample{

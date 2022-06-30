@@ -1,7 +1,6 @@
-GO=GO111MODULE=on go
-GOBUILD=$(GO) build
-
+.PHONY: all
 all: build
 
+.PHONY: build
 build:
-	$(GOBUILD) ./...
+	go build ./...
