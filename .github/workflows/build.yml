@@ -1,0 +1,57 @@
+name: Build CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+        go-version: [1.18.x]
+
+    runs-on: ${{ matrix.os }}
+    steps:
+
+      - name: Set up Go ${{ matrix.go-version }}
+        uses: actions/setup-go@v1
+        with:
+          go-version: ${{ matrix.go-version }}
+        id: go
+
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v2
+
+      - name: Get Go dependencies
+        run: go get -v -t -d ./...
+
+      - name: Build
+        run: |
+          make build
+      - name: Unit tests
+        run: go test ./...
+
+      - name: Run golangci-lint
+        uses: golangci/golangci-lint-action@v2
+        with:
+          args: --timeout=3m12s
+          skip-go-installation: true
+          skip-pkg-cache: true
+          skip-build-cache: true
+
+      - name: "Check: go fmt"
+        run: |
+          if [ "$(gofmt -s -l . | wc -l)" -gt 0 ]; then
+              gofmt -s -l -d .
+              echo "Please run: go fmt ./..."
+              exit 1
+          fi
+          if [ "$(go mod tidy -v | wc -l)" -gt 0 ]; then
+              go mod tidy -v
+              echo "Please run: go mod tidy"
+              exit 1
+          fi
+        if: matrix.os == 'ubuntu-latest'
