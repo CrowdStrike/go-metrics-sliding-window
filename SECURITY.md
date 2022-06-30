@@ -2,9 +2,13 @@
 
 # Security Policy
 
-## Reporting a potential security vulnerability
+## Supported Versions
 
-We have multiple avenues to receive security-related vulnerability reports.
+| Version | Supported          |
+|---------| ------------------ |
+| 0.1.x   | :white_check_mark: |
+
+## Reporting a Vulnerability
 
 Please report suspected security vulnerabilities by:
 + Submitting a [bug](https://github.com/CrowdStrike/go-metrics-sliding-window/issues/new).
