@@ -9,8 +9,8 @@ phase out sample values once they fall outside the window.
 ## Rationale
 The problem with the default exponential decay sampling approach is that it only expires old data as new data comes in.
 While this approach works perfectly fine for high-volume metrics, it is problematic for low-volume metrics and can lead to 
-misleading graphs where the data is stale, but looks like it is recent. This issue is particularly troublesome when measuring
-metrics with a histogram (e.g., endpoint latency).
+misleading graphs where the data is stale, but looks like it is recent. This issue is [particularly troublesome when measuring
+metrics with a histogram](http://taint.org/2014/01/16/145944a.html) (e.g., endpoint latency).
 
 Ideally this contribution would be made to the go-metrics project itself, but the author has [made it clear](https://github.com/rcrowley/go-metrics/pull/99)
 he would rather have others implement this themselves and leverage the exported interfaces. 
