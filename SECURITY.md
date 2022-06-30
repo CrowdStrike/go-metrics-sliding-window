@@ -1,5 +1,4 @@
-![CrowdStrike Go Metrics Sliding Window](https://raw.githubusercontent.com/CrowdStrike/go-metrics-sliding-window/img/cs-logo.png)
-
+![CrowdStrike Go Metrics Sliding Window](/img/cs-logo.png?raw=true)
 # Security Policy
 
 ## Supported Versions
