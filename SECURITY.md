@@ -10,5 +10,5 @@
 ## Reporting a Vulnerability
 
 Please report suspected security vulnerabilities by:
-+ Submitting a [bug](https://github.com/CrowdStrike/go-metrics-sliding-window/issues/new).
-+ Submitting a [pull request](https://github.com/CrowdStrike/go-metrics-sliding-window/pulls) to potentially resolve the issue.
++ Submitting a [bug](https://github.com/CrowdStrike/go-metrics-extensions/issues/new).
++ Submitting a [pull request](https://github.com/CrowdStrike/go-metrics-extensions/pulls) to potentially resolve the issue.

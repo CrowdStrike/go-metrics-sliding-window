@@ -1,4 +1,4 @@
-module github.com/crowdstrike/go-metrics-sliding-window
+module github.com/crowdstrike/go-metrics-extensions
 
 go 1.18
 
