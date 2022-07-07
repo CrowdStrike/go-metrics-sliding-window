@@ -2,7 +2,7 @@
 # Sliding Window Sampling for go-metrics
 
 ## Overview
-This project contains a simple implementation of a sliding window sampling approach implementing the rcrowley/go-metrics Sample interface.
+This project contains a simple implementation of a sliding window sampling approach implementing the [rcrowley/go-metrics](https://github.com/rcrowley/go-metrics) Sample interface.
 The user can define a reservoir size, much like the default sampling approach, but also define a window size that is used to
 phase out sample values once they fall outside the window.
 
